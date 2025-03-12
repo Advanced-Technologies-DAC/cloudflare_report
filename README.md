@@ -118,32 +118,37 @@ https://stackoverflow.com/questions/4383571/importing-files-from-different-folde
 
 **HTTP Traffic**
 Facilita la identificación de patrones de tráfico, la eficiencia del caché y la distribución de visitantes, ayudando a optimizar el rendimiento y la capacidad de respuesta de la infraestructura.
-
   - Total Requests as stat
   - Cached Requests as stat
   - Uncached Requests as stat
-  - 7/30d graph for both cached & uncached requests.
+  - 7/30d graph for both cached & uncached requests
 
+  &nbsp;
 
   - Total bandiwdth as stat
   - Cached bandiwdth as stat
   - Uncached bandwidth as stat
   - 7/30d graph for both cached & uncached bandwidth.
 
+  &nbsp;
 
   - Total unique visitors as stat
   - Maximum unique visitors per day as stat
   - Minimum unique visitors per day as stat
   - 7/30d graph for unique visitors
 
+  &nbsp;
 
   - Top 5 traffic countries & list
+
+___
 
 **Protocol & Content delivery**
 Muestra los protocolos usados por el clienre, asegurando compatibilidad y eficiencia en la entrega de contenido, asi como información sobre el tipo de contenido más demandado, optimizando el uso de caché.
   - HTTP Client version (top 3) as pie chart
   - SSL Versions
   - Content type served
+___
 
 **Security Events**
 Muestra las amenazas detectadas en la red, país de origen y tipo de ataque más. Asi como la actividad de bots/crawlers, ayudando a reforzar la seguridad y minimizar riesgos de tráfico malicioso.
