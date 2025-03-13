@@ -2,7 +2,7 @@
 Backend
 """
 
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, request
 
 app = Flask(__name__)
 
@@ -21,6 +21,26 @@ def admin():
     Admin route
     """
     return render_template("admin.html")
+
+
+@app.route("/reporte")
+def reporte():
+    """
+    Reporte route
+    """
+    return render_template("reporte.html")
+
+@app.route("/get_report")
+def get_reporte():
+    """
+    Crear un reporte
+    """
+    client = request.args.get("client")
+    period = request.args.get("period")
+    
+    if not client or not period:
+        return "<p style='color: red;'>Error: Cliente y período requeridos</p>", 400
+    return "<p style='color: green;'>Reporte generado.</p>", 200
 
 
 @app.route("/user")

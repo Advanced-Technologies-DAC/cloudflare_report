@@ -1,0 +1,62 @@
+{% extends "base.html" %} 
+{% block title %}Admin{% endblock %} 
+{% block content %}
+
+<h2 class="text-center mb-5">Generador de reportes</h2>
+
+<!-- Centered Card -->
+<div class="d-flex justify-content-center">
+    <div class="card p-4 shadow-sm text-center" style="width: 300px; border-radius: 12px;">
+
+        <!-- Clients Dropdown -->
+        <div class="dropdown mb-3">
+            <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownClients" data-bs-toggle="dropdown" data-selected="">
+                Cliente
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-value="dc79a43e4cc3f6a73916dd15ed3d47e" onclick="updateBtn(this, 'dropdownClients')">ATDAC</a></li>
+                <li><a class="dropdown-item" href="#" data-value="f59279c6958c57bb391e93c8dba8965a" onclick="updateBtn(this, 'dropdownClients')">Flexware</a></li>
+            </ul>
+        </div>
+
+        <!-- Period Dropdown -->
+        <div class="dropdown mb-3">
+            <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownPeriods" data-bs-toggle="dropdown" data-selected="">
+                Periodo
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-value="7" onclick="updateBtn(this, 'dropdownPeriods')">7 Días</a></li>
+                <li><a class="dropdown-item" href="#" data-value="15" onclick="updateBtn(this, 'dropdownPeriods')">15 Días</a></li>
+                <li><a class="dropdown-item" href="#" data-value="30" onclick="updateBtn(this, 'dropdownPeriods')">30 Días</a></li>
+            </ul>
+        </div>
+
+        <!-- Generate Report Button -->
+        <div class="d-flex justify-content-center">
+            <button 
+            class="btn btn-primary"
+            id="generateReportBtn"
+            hx-get="/get_report"
+            hx-trigger="click"
+            hx-vals='js:{ client: document.getElementById("dropdownClients").getAttribute("data-selected"), period: document.getElementById("dropdownPeriods").getAttribute("data-selected") }'
+            hx-target="#reportStatus"
+            >
+                Generar Reporte
+            </button>
+        </div>
+
+        <div id="reportStatus" class="mt-3 text-center"></div>
+
+    </div>
+</div>
+
+<script>
+    // 🔹 Updates button text and stores selected value
+    function updateBtn(element, id) {
+        let btn = document.getElementById(id);
+        btn.innerHTML = element.innerText;
+        btn.setAttribute("data-selected", element.getAttribute("data-value"));
+    }
+</script>
+
+{% endblock %}

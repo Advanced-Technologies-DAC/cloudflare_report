@@ -64,6 +64,8 @@ per Arturo: 80% of them will use the basic plan *7 days* that gives us 1000 rows
 - Need to add the path of all the utils:
 https://stackoverflow.com/questions/4383571/importing-files-from-different-folder
 - dashboard_stat_graph, el tercer stat, esta tomando el titulo del primer stat
+- Accounts Id's are ahrdcoded in the html
+- In image_utils theres a function called dashboard_stat_test, that is supposed to be just for test but its actually in prod
 
 ## API Functionalities:
 

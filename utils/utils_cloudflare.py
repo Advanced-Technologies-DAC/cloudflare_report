@@ -5,17 +5,9 @@ V5 functions neccesary to run the Cloudflare API
 __version__ = "5.0.0"
 
 
-import os
 from datetime import datetime, timedelta
 
-import dotenv as env
 import requests
-
-env.load_dotenv()
-TOKEN = os.getenv("CF_API_TOKEN")
-ATDAC_ID = os.getenv("ATDAC_ID")
-if not TOKEN:
-    raise ValueError("Missing or invalid API token.")
 
 
 def range_generator(leq_date: str, periods: int) -> dict:

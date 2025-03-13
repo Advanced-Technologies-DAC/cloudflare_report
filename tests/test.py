@@ -1,15 +1,3 @@
-import os
-
-import dotenv as env
-
-from utils.image_utils import dashboard_stat_test
-
-env.load_dotenv()
-TOKEN = os.getenv("CF_API_TOKEN")
-ATDAC_ID = os.getenv("ATDAC_ID")
-if not TOKEN:
-    raise ValueError("Missing or invalid API token.")
-
 TEST_REQ = {
     "title": "Requests",
     "content": {
@@ -119,7 +107,7 @@ TEST_REQUESTS_PER_COUNTRY = {
 }
 
 
-dashboard_stat_test(TEST_VISITS, "Visits")
+# dashboard_stat_test(TEST_VISITS, "Visits")
 # dashboard_table_map(TEST_REQUESTS_PER_COUNTRY)
 # dashboard_stat_graph(TEST_REQ, TEST_CACHED_REQ, "Uncached requests", "Requests")
 # dashboard_stat_graph(TEST_BANDWIDTH, TEST_CACHED_BANDWIDTH, "Uncached bandwidth", "MB")
